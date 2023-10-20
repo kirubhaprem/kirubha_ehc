@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fullscreen Responsive Login page</title>
+    <style>
+        .background{
+    position: static;
+    width: 150%;
+    height: 100vh;
+    background-image: url(./img/nm1.jpg);
+    background-size: cover;
+    background-position: center;
+ 
+}
+html{
+    font-size: x-large;
+    font-style: oblique;
+    color: rgb(253, 234, 253);
+}
+.nav-bar a{
+    display: flexbox;
+    float: right;
+    margin: 0;
+    background-color:none;
+    color: rgb(14, 1, 8);
+    text-align:right;
+    padding: 10px;
+    text-decoration: none;
+}
+.nav-bar a :hover{
+    background-color: rgb(8, 9, 0);
+    color: black;
+}
+.element{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgb(240, 241, 255);
+    padding: 10px;
+}
+.contentBx{
+     width: 250px;
+     height: 300px;
+     position: absolute;
+     top: 90px;
+     left: 870px;
+}
+
+.contentBx .formBx{
+    width: 250%;
+}
+.contentBx .formBx h2{
+    color: #0f0e0d;
+    font-weight: 600;
+    font-size: 1.5cm;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-bottom: 4px solid #ff4584;
+    display: inline-block;
+    letter-spacing: 1px;
+}
+.contentBx .formBx .inputBx{
+    margin-bottom: 20px;
+}
+.contentBx .formBx .inputBx span{
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: inline-block;
+    color: #080808;
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+.contentBx .formBx .inputBx input{
+    width: 10%;
+    padding: 10px ;
+    outline: none;
+    font-weight: 200;
+    border: 1px solid #0b0c0c;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #e2e9ec;
+    background: transparent;
+    border: radius 10cm; 
+}
+.contentBx .formBx .inputBx input[ type="submit"]{
+    background: #ff4584;
+    color: #080808;
+    outline:none ;
+    bottom: none;
+    font-weight: 600;
+    cursor: pointer;
+}
+.contentBx .formBx .inputBx input[type="submit"]:hover{
+    background: #f53677;
+}
+  .contentBx .formBx .remember{
+margin-bottom: 10px;
+color: #0a0a0a;
+font-weight: 400;
+font-size: 14px;
+}
+.contentBx .formBx .inputBx p{
+    color: #111111;
+}
+.contentBx .formBx .inputBx p a{
+    color: #ff4584;
+}
+@media(max-width:768px){
+    .background {
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100%;
+        background-image: url(./img/bgimage.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+    .input-control.success input{
+        border-color: #09c372;
+    }
+    
+    .input-control.error input{
+        border-color:red;
+    }
+    
+    .error{
+        color: red;
+        font-size: 9px;
+        height: 13px;
+    }
+}
+    </style>
+</head>
+<body>
+    <script>
+        const formBx = document.getElementById('formBx');
+const username = document.getElementById('username');
+const password = document.getElementById('password');
+
+form.addEventListener('submit',e=>{
+    e.preventDefault();
+
+    validateInputs();
+});
+
+const seterror =(element,message)=>{
+    const inputControl = element.parentElement();
+    const errorDisplay = inputControl.queryselector('.error');
+
+    errorDisplay.innerText=message;
+    inputControl.classList.add('error');
+    inputControl.classList.remove('sucess'); 
+};
+
+const setsuccess =(element)=>{
+    const inputControl= element.parentElement();
+    const errorDisplay = inputControl.queryselector('.error');
+
+    errorDisplay.innerText='element';
+    inputControl.classList.add('success');
+    inputControl.classList.remove('error');
+};
+
+const validateInputs=()=>{
+    const usernamevalue = username.Value.trim();
+    const passwordvalue = passwordvalue.Value.trim();
+
+    if(usernamevalue===''){
+        seterror( 'username is required');
+        return;
+    }else{
+           setsuccess(username);
+        }    }
+
+    if(passwordvalue===''){
+        seterror('password is required');
+    }else if(passwordvalue.length<8){
+        seterror(password,'password must be atleast 8 character.')
+    }else{
+        setsuccess(password);
+    }
+
+    </script>
+    <div class="nav-bar">
+        <a href="#">COST</a>
+        <a href="#">CONTACT</a>
+        <a href="#">SERVICE</a>
+        <a href="#">ABOUT</a>
+        <a href="#">HOME</a>
+    </div>
+    <div class="element"></div> 
+    <div class="background">
+      <header class="stuent_container">
+     <div class=header_content></div>
+         <h1 style="color: rgb(24, 7, 29);text-align: center; font-style: oblique;">EDUCATION IS POWER </h1>
+            <h3 >The purpose of Education is to turn mirrors into windows</h3>
+            <p> EDUCATION IS THE MOST POWERFUL WEAPON <br> WHICH YOU CAN USE TO <br>CHANGE THE WORLD</p>
+            <h2>programming languages</h2>
+            <ul>
+                <li ><a style="color: black; font-size: xx-large;"href="http://www.example.com/cplus">c++ programming </a> </li>
+                <li><a style="color: black; font-size: xx-large;"href="http://www.example.com/python">python programming </a></li>
+                <li><a style="color: black; font-size: xx-large;"href="http://www.example.com/java">java programming </a></li>
+            </ul>      
+        </div>
+       </header>
+         </div>
+    <div class="contentBx">
+        <div class="formBx">
+            <h2>Login</h2>
+            <form method="post" id="form1"> 
+                <div class="inputBx">
+                    <span style="font-size: x-large;"> username</span>
+                    <input type="text" name="" required>
+                    <div class="error"></div>
+                </div>
+                <div class="inputBx">
+                    <span style="font-size: x-large ;"> password</span>
+                    <input type="password" name="" required>
+                    <div class="error"></div>
+                </div>
+                <div class="remember">
+                    <label style="font-size: x-large;" for="remember"> remember me</label> 
+                        <input type="checkbox" name="" remember me >
+                    </label>
+                </div>
+                <div class="inputBx">
+                  <input type="submit" value="Login" name="" onclick="hello">
+                </div>
+                <div class="inputBx">
+                    <p> Don't have an account? <a href="#">sign in </a></p>
+                </div>
+            </form>
+        </div>   
+    </div>
+    <script src="java.js"></script>
+</body>
+</html>
